@@ -66,6 +66,12 @@ public char getColumna() {
 		return columna == other.columna && fila == other.fila;
 	}
 	
+	/*metodo toString, tambien generado mediante la opcion automatizada para mas comodidada*/
+	@Override
+	public String toString() {
+		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
+	}
+	
 	
 	
 	
