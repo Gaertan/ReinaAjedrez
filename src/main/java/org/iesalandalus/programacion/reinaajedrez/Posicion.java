@@ -40,6 +40,12 @@ public char getColumna() {
 		setFila(fila);
 		setColumna(columna);
 	}
+	
+/*metodo copia*/	
+	public Posicion(Posicion posicion) {
+		this.fila=posicion.getFila();
+		this.columna=posicion.getColumna();
+	}
 }
 
 
