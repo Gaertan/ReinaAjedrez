@@ -1,11 +1,12 @@
 package org.iesalandalus.programacion.reinaajedrez.modelo;
 
 public class Reina {
+	/*atribs, yas queen*/
 
 	private Color color;
 	private Posicion posicion;
 
-	
+/*getters y setters. */	
 	public Color getColor() {
 		return this.color;
 	}
@@ -35,6 +36,12 @@ public class Reina {
 	    
         }
 	
+	/*constructor por defecto */
+	public Reina() {
+
+		color = Color.BLANCO;
+		posicion = new Posicion(1, 'd');
+	}
 	
 	
 	
