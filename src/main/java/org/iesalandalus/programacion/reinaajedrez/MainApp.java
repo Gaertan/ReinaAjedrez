@@ -1,5 +1,4 @@
 package org.iesalandalus.programacion.reinaajedrez;
-import org.iesalandalus.programacion.utilidades.Entrada;
 
 import javax.naming.OperationNotSupportedException;
 
@@ -8,28 +7,30 @@ import org.iesalandalus.programacion.reinaajedrez.modelo.*;
 
 public class MainApp {
 	
-	static Reina reina;	
+	static Reina reina;
+	static boolean petar = false;
 		
-	private static void ejecutarOpcion(int opcion) {
+	private static void ejecutarOpcion(int opcion) throws OperationNotSupportedException {
 		
 		switch(opcion){
 		
 		case 1:{
-			
+			crearReinaDefecto();
 			break;
 			}
 			
 		case 2:{	
-			
+			crearReinaColor();
 			break;
 			}
 			
-		case 3:{			
+		case 3:{
+			mover();
 			break;
 			}
 			
 		case 4:{
-			
+			petar = true;
 			break;
 		}
 		
@@ -64,16 +65,22 @@ public class MainApp {
 	}
 		
 	public static void main(String[] args) {
+	
+	
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		do {
+			Consola.mostrarMenu();
+			try {
+				ejecutarOpcion(Consola.elegirMenu());
+			} catch (OperationNotSupportedException e) {
+				System.out.println("se ha producido un error");
+				e.printStackTrace();
+			}
+			
+		} while (petar == false);
 	}
+	
+		
+	
+	
 }
