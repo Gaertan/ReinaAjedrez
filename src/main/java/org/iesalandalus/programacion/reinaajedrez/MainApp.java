@@ -5,7 +5,7 @@ import org.iesalandalus.programacion.reinaajedrez.modelo.*;
 
 public class MainApp {
 	
-	Reina reina;	
+	static Reina reina;	
 		
 	private static void ejecutarOpcion(int opcion) {
 		
@@ -33,6 +33,17 @@ public class MainApp {
 		
 		}
 		
+		
+	}
+	
+	private static void crearReinaDefecto() {
+
+		reina = new Reina();
+	}
+	
+	private static void crearReinaColor() {
+
+		reina = new Reina(Consola.elegirColor());
 		
 	}
 		
