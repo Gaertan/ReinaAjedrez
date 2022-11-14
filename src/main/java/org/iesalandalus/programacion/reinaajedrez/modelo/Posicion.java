@@ -15,7 +15,7 @@ public char getColumna() {
 	return this.columna;
 }
 	/*setters*/
-	private void setFila(int fila) {
+	private void setFila(int fila) throws IllegalArgumentException {
 		if (fila<1 || fila>8) {
 			throw new IllegalArgumentException("ERROR; valor de fila no valido");
 			}
@@ -23,9 +23,9 @@ public char getColumna() {
 	}
 
 
-	private void setColumna(char columna) {
+	private void setColumna(char columna)throws IllegalArgumentException {
 
-		int columnNumero = columna;
+		int columnNumero = (columna - 96);
 			if(columnNumero<1 || columnNumero>8) {
 				throw new IllegalArgumentException("ERROR; valor de columna no valido");
 			}
@@ -33,8 +33,8 @@ public char getColumna() {
 
 		}
 /*constructor de posicion.*/
-	public Posicion(int fila, char columna) {
-		int columnNumero = columna;
+	public Posicion(int fila, char columna) throws IllegalArgumentException {
+		int columnNumero = ( columna - 96 );
 		if((columnNumero<1 || columnNumero>8)||(fila<1 || fila>8)) {
 			throw new IllegalArgumentException("ERROR; valor de columna o fila no valido");
 		}
