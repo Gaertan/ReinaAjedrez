@@ -112,5 +112,17 @@ public static Direccion elegirDireccion() {
 }
 
 
+public static int elegirPasos() {
+	int casillas;
+	
+	do {
+		System.out.print("Introduce las casillas a mover ");
+		casillas = Entrada.entero();
+
+	} while (casillas < 1 || casillas > 7);
+
+	return casillas;
+
+}
 
 }
