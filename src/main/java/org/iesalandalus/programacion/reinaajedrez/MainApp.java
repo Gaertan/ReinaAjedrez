@@ -56,6 +56,12 @@ public class MainApp {
 
 		reina.mover(Consola.elegirDireccion(), Consola.elegirPasos());
 	}
+	
+	public static void mostrarReina() {
+		if (reina == null) {System.out.println("la reina no existe");}
+		else{System.out.println(reina.toString());}
+
+	}
 		
 	public static void main(String[] args) {
 
