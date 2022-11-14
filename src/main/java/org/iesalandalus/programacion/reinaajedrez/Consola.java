@@ -15,7 +15,9 @@ public static void mostrarMenu(){
 	System.out.println("4. Salir.");
 }
 
+
 public static int elegirMenu() {
+
 	int input = -1;
 	do {
 		System.out.print("Escoja la opción!(escriba 1,2,3 o 4),si el valor es erroneo se vuelve a pedir; ");
@@ -25,6 +27,8 @@ public static int elegirMenu() {
 	return input;
 	
 }
+
+
 public static Color elegirColor() {
 
 	int input;
@@ -38,6 +42,20 @@ public static Color elegirColor() {
 	} else {
 		return Color.NEGRO;
 	}
+}
+
+
+public static void menuDirecciones() {
+	System.out.println("Estas son las posibles direcciones a escoger");
+	System.out.println("1 ESTE");
+	System.out.println("2 OESTE");
+	System.out.println("3 NORTE");
+	System.out.println("4 SUR");
+	System.out.println("5 SURESTE");
+	System.out.println("6 SUROESTE");
+	System.out.println("7 NORESTE");
+	System.out.println("8 NOROESTE");		
+	
 }
 
 }
