@@ -37,11 +37,25 @@ public class Reina {
         }
 	
 	/*constructor por defecto */
-	public Reina() {
-
-		color = Color.BLANCO;
-		posicion = new Posicion(1, 'd');
-	}
+		public Reina() {
+	
+			color = Color.BLANCO;
+			posicion = new Posicion(1, 'd');
+		}
+		
+		public Reina(Color color) {
+			setColor(color);
+			if (color == color.BLANCO) {
+				posicion = new Posicion(1, 'd');
+			} else if (color == Color.NEGRO) {
+				posicion = new Posicion(8, 'd');
+			}
+	
+		}
+	
+	
+	
+	
 	
 	
 	
