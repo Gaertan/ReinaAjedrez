@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.reinaajedrez;
 import org.iesalandalus.programacion.utilidades.Entrada;
+import org.iesalandalus.programacion.reinaajedrez.modelo.*;
 
 public class Consola {
 	
@@ -15,15 +16,28 @@ public static void mostrarMenu(){
 }
 
 public static int elegirMenu() {
-	int opcion = -1;
+	int input = -1;
 	do {
 		System.out.print("Escoja la opción!(escriba 1,2,3 o 4),si el valor es erroneo se vuelve a pedir; ");
-		opcion = Entrada.entero();
-	} while (opcion < 1 || opcion > 4);
+		input = Entrada.entero();
+	} while (input < 1 || input > 4);
 
-	return opcion;
+	return input;
 	
 }
+public static Color elegirColor() {
 
+	int input;
+	do {
+		System.out.print("Introduce 1 para una reina blanca o 2 para una reina negra(en caso de valor erroneo se vuelve a pedir): ");
+		input = Entrada.entero();
+	} while ((input < 1 )&&(input > 2));
+
+	if (input == 1) {
+		return Color.BLANCO;
+	} else {
+		return Color.NEGRO;
+	}
+}
 
 }
