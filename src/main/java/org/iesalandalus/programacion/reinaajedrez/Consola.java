@@ -125,4 +125,10 @@ public static int elegirPasos() {
 
 }
 
+public static void despedirse() {
+
+	System.out.println("See you around");
+	System.out.println("ඞ");
+
+}
 }
