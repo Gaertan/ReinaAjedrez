@@ -4,10 +4,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.iesalandalus.programacion.reinaajedrez.Posicion;
 import org.junit.jupiter.api.Test;
 
 class PosicionTest {
-	
+
 	private static final String FILA_NO_ESPERADA = "La fila devuelta no es la esperada.";
 	private static final String COLUMNA_NO_ESPERADA = "La columna devuelta no es la esperada.";
 	private static final String POSICION_NO_ESPERADA = "La posición copiada debería ser la misma que la pasada como parámetro.";
@@ -30,7 +31,7 @@ class PosicionTest {
 		assertEquals(1, posicion.getFila(), FILA_NO_ESPERADA);
 		assertEquals('a', posicion.getColumna(), COLUMNA_NO_ESPERADA);
 	}
-	
+
 	@Test
 	void constructorFilaNoValidaColumnaValidaLanzaExcepcion() {
 		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(0, 'a');}, EXCEPCION_NO_VALIDA);
@@ -38,7 +39,7 @@ class PosicionTest {
 		excepcion = assertThrows(IllegalArgumentException.class, () -> {  new Posicion(9, 'a');}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
-	
+
 	@Test
 	void constructorFilaValidaColumnaNoValidaLanzaExcepcion() {
 		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(1, '`');}, EXCEPCION_NO_VALIDA);
@@ -46,7 +47,7 @@ class PosicionTest {
 		excepcion = assertThrows(IllegalArgumentException.class, () -> {  new Posicion(1, 'i');}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_COLUMNA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
-	
+
 	@Test
 	void constructorFilaNoValidaColumnaNoValidaLanzaExcepcion() {
 		IllegalArgumentException excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(0, '`');}, EXCEPCION_NO_VALIDA);
@@ -58,20 +59,20 @@ class PosicionTest {
 		excepcion = assertThrows(IllegalArgumentException.class, () -> { new Posicion(9, 'h');}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_FILA_NO_VALIDA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
-	
+
 	@Test
 	void constructorPosicionValidaDevuelveCopiaDeLaPosicion() {
 		Posicion posicion = new Posicion(1, 'a');
 		Posicion nuevaPosicion = new Posicion(posicion);
 		assertEquals(posicion, nuevaPosicion, POSICION_NO_ESPERADA);
 	}
-	
+
 	@Test
 	void constructorPosicionNulaLanzaExcepcion() {
 		NullPointerException excepcion = assertThrows(NullPointerException.class, () -> { new Posicion(null);}, EXCEPCION_NO_VALIDA);
 		assertEquals(MENSAJE_ERROR_COPIAR_POSICION_NULA, excepcion.getMessage(), MENSAJE_NO_CORRECTO);
 	}
-	
+
 	@Test
 	void equalsHashCodeComparaCorrectamente() {
 		Posicion posicion1 = new Posicion(1, 'a');
@@ -89,7 +90,7 @@ class PosicionTest {
 		assertNotEquals(posicion1, new Posicion(2, 'b'), OBJETOS_DEBERIAN_SER_DIFERENTES);
 		assertNotEquals(posicion1.hashCode(), new Posicion(2, 'b').hashCode(), HASHS_DEBERIAN_SER_DIFERENTES);
 	}
-	
+
 	@Test
 	void toStringDevuelveLaCadenaEsperada() {
 		assertEquals("fila=1, columna=a", new Posicion(1, 'a').toString(), CADENA_NO_ESPERADA);

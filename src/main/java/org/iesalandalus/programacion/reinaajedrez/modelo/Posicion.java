@@ -1,10 +1,10 @@
-package org.iesalandalus.programacion.reinaajedrez;
+package org.iesalandalus.programacion.reinaajedrez.modelo;
 
 import java.util.Objects;
 
 public class Posicion {
+	
 private int fila;
-
 private char columna;
 
 	/*getters */
@@ -30,7 +30,7 @@ public char getColumna() {
 				throw new IllegalArgumentException("ERROR; valor de columna no valido");
 			}
 		else this.columna=columna;
-		
+
 		}
 /*constructor de posicion.*/
 	public Posicion(int fila, char columna) {
@@ -42,13 +42,13 @@ public char getColumna() {
 		setFila(fila);
 		setColumna(columna);
 	}
-	
-/*metodo copia*/	
+
+/*metodo copia*/
 	public Posicion(Posicion posicion) {
 		this.fila=posicion.getFila();
 		this.columna=posicion.getColumna();
 	}
-	
+
 	/*usando generate hashcode y equals en eclipse(Source->generate hashcode y equals) genero los metodos requeridos*/
 	@Override
 	public int hashCode() {
@@ -58,26 +58,24 @@ public char getColumna() {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Posicion other = (Posicion) obj;
 		return columna == other.columna && fila == other.fila;
 	}
-	
+
 	/*metodo toString, tambien generado mediante la opcion automatizada para mas comodidada*/
 	@Override
 	public String toString() {
 		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 }
 
 

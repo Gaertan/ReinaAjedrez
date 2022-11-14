@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 
 class ColorTest {
-	
+
 	private static final String NOMBRE_NO_VALIDO = "El nombre del color no es válido.";
 
 	@Test
