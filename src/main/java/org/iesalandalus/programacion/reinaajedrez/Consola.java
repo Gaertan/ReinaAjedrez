@@ -58,4 +58,59 @@ public static void menuDirecciones() {
 	
 }
 
+
+public static Direccion elegirDireccion() {
+	int input = -1;
+	Direccion direccion = null;
+		
+		do {
+			System.out.println("Escoja la dirección a usar(se pedirá el valor hasta que sea válido)");
+			input=Entrada.entero();
+			
+		}
+		while(input<1||input>8);
+		
+	
+		switch(input) {
+		
+		case 1:
+			direccion = Direccion.ESTE;
+			
+		break;
+		case 2:
+			direccion = Direccion.OESTE;
+			
+		break;
+		case 3:
+			direccion = Direccion.NORTE;
+			
+		break;
+		case 4:
+			direccion = Direccion.SUR;
+			
+		break;
+		case 5:
+			direccion = Direccion.SURESTE;
+			
+		break;
+		case 6:
+			direccion = Direccion.SUROESTE;
+			
+		break;
+		case 7:
+			direccion = Direccion.NORESTE;
+			
+		break;
+		case 8:
+			direccion = Direccion.NOROESTE;
+			
+		break;
+		
+		}
+	
+	return direccion;
+}
+
+
+
 }
