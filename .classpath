@@ -25,6 +25,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="lib" path="src/main/java/org/iesalandalus/programacion/reinaajedrez/package/Reina.java"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
